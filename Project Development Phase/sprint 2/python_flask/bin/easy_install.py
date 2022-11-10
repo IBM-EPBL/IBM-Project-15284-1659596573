@@ -1,4 +1,4 @@
-#!/home/vivekanandhan/Desktop/ibm_python/bin/python3
+
 # -*- coding: utf-8 -*-
 import re
 import sys
