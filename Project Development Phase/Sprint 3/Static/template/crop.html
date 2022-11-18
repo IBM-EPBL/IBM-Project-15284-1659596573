@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <!--link href="../Static/css/bootstrap.min.css" rel="Stylesheet" type="text/css">
+        <link href="../Static/css/Style.css" rel="Stylesheet" type="text/css"-->  
+        <link href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\CSS\bootstrap.min.css"  rel= "stylesheet"text='text/css'/>
+        <link href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\CSS\Style.css" rel='stylesheet' type='text/css'>  
+        <!--City-->
+        <script type="text/JavaScript" src="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\script\Cities.js"></script>
+        <script>
+            function myfunc(){
+            var el=`<h2> You can Grow</h2> <image  style="width:50%; margin:5%; border-radius:10%;" src="{{crops[0]}}"></image><h4 style="margin-left:10%;">{{crops[1]}}</h4>`;
+            document.getElementById("predict").innerHTML=el;
+        };
+        </script>    
+    </head>
+    <body class="bg-info" onload={{crops[2]}}>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light"> 
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="navbar-brand" href="#" style="color:blue ;"><b>EDA Rainfall</b></a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                        <li class="nav-item active" >
+                            <a class="nav-link" href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\template\home.html">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\template\Rainfall.html">Rainfall Prediction</a>
+                        </li>
+                        <li class="nav-item active"Style="border-bottom: 4px solid blue;">
+                            <a class="nav-link" href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\template\crop.html">Crop Recommender</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-6">
+                            <form  method="POST" action="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Final Dataset\Crop_prediction.csv">
+                            <div class="form-group d-flex">
+                                <label for="State" style="padding:6% 15% 6% 18%;">State</label>
+                                <select style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" onchange="print_city('state', this.selectedIndex);" id="state" class="form-control" name="state" required></select>
+                                <script language="Javascript">print_state("state");</script>
+                            </div>
+                            <div class="form-group d-flex">
+                                <label for="nitrogen" style="padding:6% 8% 6% 16%;">Nitrogen</label>
+                                <input type="number" style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" id="nitrogen" name="nitrogen" placeholder="Example:40" required><br>
+                            </div>
+                            <div class="form-group d-flex">
+                                <label for="pottasium" style="padding:6% 5% 6% 15%;">Pottasium</label>
+                                <input type="number" style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" id="pottasium" name="pottasium" placeholder="Example:40" required><br>
+                            </div>
+                            <div class="form-group d-flex">
+                                <label for="rainfall" style="padding:6% 10% 6% 18%;">Rainfall</label>
+                                <input type="number" style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" id="rainfall" name="rainfall" placeholder="Example:202.56" step="0.01" required><br>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group d-flex">
+                                <label for="city" style="padding:6% 10% 6% 15%;">District</label>
+                                <select id="city" style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" name="city" required></select>
+                                <script language="Javascript">print_city("city");</script>
+                            </div>
+                            <div class="form-group d-flex">
+                                <label for="phosphorous"style="padding:6% 8% 6% 4%;">Phosphorous</label>
+                                <input type="number" style="margin:5%; border-radius: 13px;width:45%;" class="form-control border-primary" id="phosphorous" name="phosphorous" placeholder="Example:40" required><br>
+                            </div>
+                            
+                            <div class="form-group d-flex">
+                                <label for="ph" style="padding:6% 10% 6% 12%;;">Ph Level</label>
+                                <input type="number" style="margin:5%; border-radius: 13px;width:45%;" class="form-control border-primary" id="ph" name="ph" placeholder="Example:5.2" step="0.01"><br>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary" style="margin-left:40%; padding:3% 10% 3% 10%; border-radius: 15px; ">Predict</button>
+                        </div>
+                    </form>
+                    <div class="form-group" style="justify-content: center;">
+                        <h1 class="text-center"><b></b></h1>
+                   </div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <p id="predict"></p>
+                </div>
+            </div>
+        </div>
+        <script href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\CSS\Bootstap.bundle.min.js"></script>
+        
+    </body>
+</html>

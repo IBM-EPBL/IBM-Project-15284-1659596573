@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <!--link href="../Static/css/bootstrap.min.css" rel="Stylesheet" type="text/css">
+        <link href="../Static/css/Style.css" rel="Stylesheet" type="text/css"-->  
+        <link href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\CSS\bootstrap.min.css"  rel= "stylesheet"text='text/css'/>
+        <link href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\CSS\Style.css" rel='stylesheet' type='text/css'> 
+        <script type="text/JavaScript" src="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\script\Cities.js"></script>
+        <script>
+            function pre(){
+                document.getElementById('icons').innerHTML=`
+                <image style="width:80%;" src="http://openweathermap.org/img/wn/10d@4x.png"></image>
+                    <p style="margin-left:15%;">{{rainfall[0]}} mm</p>`;}
+        </script>
+    </head>
+    <body class="bg-info" onload={{rainfall[1]}}>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light"> 
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="navbar-brand" href="#" style="color:blue ;"><b>EDA Rainfall</b></a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav ml-auto w-100 justify-content-end">
+                        <li class="nav-item active" >
+                            <a class="nav-link" href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\template\home.html">Home</a>
+                        </li>
+                        <li class="nav-item active" Style="border-bottom: 4px solid blue;">
+                            <a class="nav-link" href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\template\Rainfall.html">Rainfall Prediction</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\template\crop.html">Crop Recommender</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="row">
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-6">
+                            <form method="POST" action="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Model\Rainfall_prediction">
+                            <div class="form-group d-flex">
+                                <label for="State" style="padding:6% 15% 6% 18%;">State</label>
+                                <select style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" onchange="print_city('state', this.selectedIndex);" id="state" class="form-control" name="state" required></select>
+                                <script language="Javascript">print_state("state");</script>                            </div>
+                            <div class="form-group d-flex">
+                                <label for="Min temperature" style="padding:6% 4% 6% 3%;">Min Temperature</label>
+                                <input type="number" style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" id="mintemp" name="mintemp" placeholder="10.6"><br>
+                            </div>
+                            <div class="form-group d-flex">
+                                <label for="Mean Temperature" style="padding:6% 1% 6% 2%;">Mean Temperature</label>
+                                <input type="number" style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" id="meantemp" name="meantemp" placeholder="23.8"><br>
+                            </div>
+                            <div class="form-group d-flex">
+                                <label for="Max Temperature" style="padding:6% 4% 6% 3%;">Max Temperature</label>
+                                <input type="number" style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" id="maxtemp" name="maxtemp" placeholder="17.2"><br>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group d-flex">
+                                <label for="District" style="padding:6% 6% 6% 6%;">District</label>
+                                <select id="city" style="margin:5%; border-radius: 13px; width:45%;" class="form-control border-primary" name="city" required></select>
+                                <script language="Javascript">print_city("city");</script>                            </div>
+                            
+                            <div class="form-group d-flex">
+                                <label for="pressure"style="padding:6% 7% 6% 3%;">Pressure</label>
+                                <input type="number" style="margin:5%; border-radius: 13px;width:45%;" class="form-control border-primary" id="pressure" name="pressure" placeholder="94.2"><br>
+                            </div>
+                            
+                            <div class="form-group d-flex">
+                                <label for="Preceptions" style="padding:6% 3% 6% 0%;;">Preceptions</label>
+                                <input type="number" style="margin:5%; border-radius: 13px;width:45%;" class="form-control border-primary" id="preceptions" name="preceptions" placeholder="20.72"><br>
+                            </div>
+                            
+                            <div class="form-group d-flex">
+                                <label for="Wind Speed" style="padding:6% 2% 6% 0%;;">Wind Speed</label>
+                                <input type="number" style="margin:5%; border-radius: 13px;width:45%;" class="form-control border-primary" id="windspeed" name="windspeed" placeholder="7.29"><br>
+                            </div>
+                        </div>
+                        <div class="col-12"><br></div>
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary" style="margin-left:40%; padding:3% 10% 3% 10%; border-radius: 15px;">Predict</button>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="col-6"><div id="icons"></div></div>
+                    
+                </div>
+                
+                <div class="col-4">
+                    <h3></h3>
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script href="C:\Users\shanm\Desktop\Project_1\Project Development Phase\Sprint 3\Static\CSS\bootstrap.bundle.min.js"></script>
+        
+    </body>
+</html>
